@@ -1,3 +1,6 @@
-Kell hozzá:
+Needed:
 - Python
-- yt-dlp (pip install yt-dlp)
+- yt-dlp ( cmd -> pip install yt-dlp )
+- Python scriptseket hozzáadni a PATH-hoz
+(Temporary: cmd -> path %path%;C:\Users\!CHANGETHIS!USERNAME!CHANGETHIS!\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts )
+(Permanent step-by-step: https://www.eukhost.com/kb/how-to-add-to-the-path-on-windows-10-and-windows-11/ )

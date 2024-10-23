@@ -40,11 +40,11 @@ def selected_type(tipus):
 
                 try:
                     os.mkdir(("down_" + str(newdict)))
-                    print(f"A(z) '{("down_" + str(newdict))}' mappa sikeresen létrehozva!.")
+                    print(f'A(z) "{("down_" + str(newdict))}" mappa sikeresen létrehozva!.')
                 except FileExistsError:
-                    print(f"A(z) '{("down_" + str(newdict))}' mappa már létezik.")
+                    print(f'A(z) "{("down_" + str(newdict))}" mappa már létezik.')
                 except Exception as e:
-                    print(f"Hiba: {e}")
+                    print(f'Hiba: {e}')
 
                 if tipus == "Videó":
                     os.system(f'yt-dlp -f "bestvideo+bestaudio[ext=m4a]" --merge-output-format mp4 --write-sub --embed-subs -o "{directory}/{"down_" + str(newdict)}/%(title)s.%(ext)s" {link}')
