@@ -47,18 +47,28 @@ def selected_type(tipus):
                     print(f'Hiba: {e}')
 
                 if tipus == "Videó":
-                    os.system(f'yt-dlp -f "bestvideo+bestaudio[ext=m4a]" --merge-output-format mp4 --write-sub --embed-subs -o "{directory}/{"down_" + str(newdict)}/%(title)s.%(ext)s" {link}')
-                    #os.system(f'yt-dlp -f bestvideo+bestaudio -o "{directory}/{"down_" + str(newdict)}/%(title)s.%(ext)s" {link}')
+                    os.system("echo.")
+                    os.system("echo Ez egy kis ideig eltart...")
+                    os.system(f'yt-dlp -q --progress --console-title -f "bestvideo+bestaudio[ext=m4a]" --merge-output-format mp4 --write-sub --embed-subs -o "{directory}/{"down_" + str(newdict)}/%(title)s.%(ext)s" {link}')
+                    os.system("echo.")
+                    os.system("echo ----------------")
+                    os.system("echo Készen is van!")
+                    os.system("echo ----------------")
+                    os.system("echo.")
                 elif tipus == "Zene":
-                    os.system(f'yt-dlp -x --audio-format mp3 -o "{directory}/{"down_" + str(newdict)}/%(title)s.%(ext)s" {link}')
-
-
+                    os.system("echo.")
+                    os.system("echo Ez egy kis ideig eltart...")
+                    os.system(f'yt-dlp -q --progress --console-title -x --audio-format mp3 -o "{directory}/{"down_" + str(newdict)}/%(title)s.%(ext)s" {link}')
+                    os.system("echo.")
+                    os.system("echo ----------------")
+                    os.system("echo Készen is van!")
+                    os.system("echo ----------------")
+                    os.system("echo.")
 
 
         button1 = ttk.Button(master, text='Mehet!', command=down).grid(row=2, column=1)
         button2 = tk.Button(master, text='Bezárás', width=10, command=master.destroy).grid(row=3, column=1)
         master.mainloop()
-
 
 
 def on_select(event):
@@ -68,19 +78,17 @@ def on_select(event):
     selected_type(selected_item)
 
 
-
 root = tk.Tk()
 root.title("Youtube letöltő")
-root.geometry("200x140")
+root.geometry("250x190")
 
-label = tk.Label(root, text="Típus: ")
+label = tk.Label(root, text="Típus: (Válassz!) ")
 label.pack(pady=10)
 
 combo_box = ttk.Combobox(root, values=["Videó", "Zene"])
 combo_box.pack(pady=5)
 
 combo_box.set("Videó")
-
 combo_box.bind("<<ComboboxSelected>>", on_select)
 
 
